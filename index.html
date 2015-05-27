@@ -6,6 +6,9 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 	
+	
+	 document.addEventListener("deviceready", arrancar, false);
+	
    function onSuccess(acceleration) {
     alert('Acceleration X: ' + acceleration.x + '\n' +
           'Acceleration Y: ' + acceleration.y + '\n' +
@@ -17,9 +20,12 @@ function onError() {
     alert('onError!');
 };
 
+function arrancar(){
+
 var options = { frequency: 3000 };  // Update every 3 seconds
 
 var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+}
 
     </script>
   </head>
